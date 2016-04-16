@@ -1,0 +1,18 @@
+mixin specialist(name,yszc,xszc,desc)
+  .specialist
+    .front.text-center
+      a(href='#')
+        i.glyphicon.glyphicon-user
+        p.name= name
+        p= yszc
+        p= xszc
+    .back.text-left
+      p
+        b 医师职称：
+        | #{yszc}
+      p
+        b 学术职称：
+        | #{xszc}
+      p
+        b 擅长领域：
+        | #{desc}

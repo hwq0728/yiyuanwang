@@ -1,0 +1,111 @@
+@import (less,reference) 'main.less';
+
+//登陆注册
+.wrapper {
+  .form-control {
+    margin: 15px 0;
+  }
+}
+
+.content {
+  .wrapper {
+    padding: 40px 0;
+
+    @media (min-width: 768px) {
+      padding: 80px 0;
+    }
+
+    background: url(../images/home-img.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+}
+
+.wrapper-intro {
+  img:first-child {
+    margin-bottom: 20px;
+  }
+}
+
+.login-register {
+  .nav-tabs {
+    border-bottom: none;
+
+    a, a:hover, a:active, a:focus, li.active a {
+      color: #fff;
+      border: none;
+      padding: 5px 0;
+      margin: 0 20px 0 0;
+      background: none;
+    }
+
+    a:hover, li.active a {
+      border-bottom: 2px solid #fff;
+    }
+  }
+
+  ul {
+    padding-bottom: 10px;
+  }
+
+  .btn-login, .btn-register {
+    color: #fff;
+    position: relative;
+    background-color: @primaryColor;
+    box-shadow: 0 6px 0 @darkColor, 0 1px 0 rgba(255, 255, 255, .5) inset;
+    transition: all .2s ease-out;
+
+    &:hover {
+      top: 3px;
+      box-shadow: 0 3px 0 @darkColor, 0 1px 0 rgba(255, 255, 255, .5) inset;
+    }
+  }
+
+  .alert {
+    display: none;
+    padding: 10px 15px;
+  }
+}
+
+.home-page {
+  padding-top: 40px;
+}
+
+//医院幻灯片
+#carousel-yy {
+  .carousel-indicators {
+    bottom: -24px;
+
+    li {
+      width: 60px;
+      height: 8px;
+      margin: 0;
+      border-radius: 0;
+      background-color: #efefef;
+
+      &.active {
+        background-color: #ccc;
+      }
+    }
+  }
+}
+
+//右侧导航
+.section-nav {
+  h5 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .label-nav {
+    background-color: @primaryColor;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 14px;
+
+    &:hover {
+      background-color: @darkColor;
+    }
+  }
+}

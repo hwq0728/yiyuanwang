@@ -1,0 +1,65 @@
+extends layout
+
+block append css
+  link(rel='stylesheet',href='./css/hospital.css')
+
+block content
+  .content
+    .container
+      .col-md-8
+        section.section
+          h4 成员医院
+          .row
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper.text-center
+                img(src='./images/yy01.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy02.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy03.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy04.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy05.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy06.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy07.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy08.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy09.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy10.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy11.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy12.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy13.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy14.png',alt="医院网")
+            .col-sm-6.col-md-4.image-table
+              .image-wrapper
+                img(src='./images/yy15.png',alt="医院网")
+      .col-md-4
+        section.section.section-provinces
+          h4 湖北省
+          - var provinces = ['武汉市','黄石市','十堰市','宜昌市','襄阳市','鄂州市','荆门市','孝感市','荆州市','黄冈市','咸宁市','随州市','恩施土家族苗族自治州','仙桃市','潜江市','天门市','神农架林区']
+          ul.nav
+            each province in provinces
+              li: a(href='#')= province
+                span.badge #{Math.ceil(Math.random() * 98)}

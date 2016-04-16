@@ -1,0 +1,12 @@
+.content {
+  margin-top: 20px;
+}
+@media (max-width: 992px) {
+  .section-specialist ul > li {
+    display: inline-block;
+  }
+}
+.section-specialist ul span.badge {
+  margin-left: 5px;
+  vertical-align: 1px;
+}

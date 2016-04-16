@@ -1,0 +1,21 @@
+.content {
+  margin-top: 20px;
+}
+.image-table {
+  display: table;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .image-table {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .section-provinces ul > li {
+    display: inline-block;
+  }
+}
+.section-provinces ul span.badge {
+  margin-left: 5px;
+  vertical-align: 1px;
+}

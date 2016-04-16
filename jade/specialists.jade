@@ -1,0 +1,55 @@
+extends layout
+
+block append css
+  link(rel='stylesheet',href='./css/specialists.css')
+
+block content
+  .content
+    .container
+      .row
+        .col-md-8
+          section.section.section-specialist
+            h4 部分专家名录
+              a.pull-right.small 更多
+            .row
+              include specialist
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+        .col-md-4
+          section.section
+            h4 专家分类
+            - var categories = ['CT','MR','DR']
+            ul.nav
+              each category in categories
+                li
+                  a(href='#')= category

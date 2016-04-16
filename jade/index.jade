@@ -1,0 +1,213 @@
+extends layout.jade
+
+block title
+  title 医院网 - 首页
+
+block append css
+  link(rel="stylesheet",href="./css/index.css")
+
+block content
+  .content
+    .wrapper
+      .container
+        .row
+          .hidden-xs.col-sm-6.col-md-8.wrapper-intro.text-center
+            img(src='./images/logo.png', alt='医院网')
+            br
+            img(src='./images/title.png', alt='医院网')
+          .col-sm-6.col-md-4.login-register
+            ul.nav.nav-tabs
+              li.active
+                a(href='#login', data-toggle='tab') 医院登陆
+              li
+                a(href='#register', data-toggle='tab') 立即注册
+            .tab-content
+              form#login.tab-pane.active.fade.in(role='tabpanel')
+                #login-info.alert.alert-danger 邮箱格式错误，请重新输入
+                input#login-email.form-control(type='email', title='email', placeholder='邮箱', autofocus='', required='')
+                input#login-password.form-control(type='password', title='password', placeholder='密码', required='')
+                .checkbox
+                  label.font-white(for='login-remember')
+                    input#login-remember(type='checkbox', title='remember me', checked='')
+                    |  记住我
+                  a.pull-right.a-white(href='#') 忘记密码
+                button.btn.btn-lg.btn-block.btn-login 登陆
+              form#register.tab-pane.fade(role='tabpanel')
+                #register-info.alert.alert-danger 邮箱格式错误，请重新输入
+                input#register-email.form-control(type='email', title='email', placeholder='邮箱', autofocus='', required='')
+                input#register-password.form-control(type='password', title='password', placeholder='密码', required='')
+                button.btn.btn-lg.btn-block.btn-register 注册
+    .home-page.container
+      .row
+        .col-md-8
+          section.section.section-carousel
+            h4
+              | 成员医院
+              a.pull-right.text-muted.small(href='#') 更多
+            #carousel-yy.carousel.slide(data-ride='carousel')
+              // Indicators
+              ol.carousel-indicators
+                li(data-target='#carousel-yy', data-slide-to='0')
+                li.active(data-target='#carousel-yy', data-slide-to='1')
+              // Wrapper for slides
+              .carousel-inner(role='listbox')
+                .item.active.left
+                  .row
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy01.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy02.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy03.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy04.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy05.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy06.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy07.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy08.png', alt='')
+                .item.next.left
+                  .row
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy09.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy10.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy11.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy12.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy13.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy14.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy15.png', alt='')
+                    .col-sm-6.col-md-3
+                      .image-wrapper
+                        a(href='#')
+                          img(src='./images/yy05.png', alt='')
+          section.section.section-specialist
+            h4
+              | 平台专家
+              a.pull-right.text-muted.small(href='#') 更多
+            .row
+              include specialist
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+              .col-sm-4.col-md-3.specialist-wrapper
+                +specialist('胡黎明','主任医师','教授','心脏、大血管、肺及乳腺影像学诊断，心肌病的MRI诊断')
+        .col-md-4
+          section.section.section-nav
+            h4 科室导航
+            .tag-section
+              h5 非手术科室
+              a.label.label-nav 内科学系
+              a.label.label-nav 心内科
+              a.label.label-nav 呼吸内科
+              a.label.label-nav 消化内科
+              a.label.label-nav 肾内科
+              a.label.label-nav 血液内科
+              a.label.label-nav 风湿免疫科
+              a.label.label-nav 感染内科
+              a.label.label-nav 普通内科
+              a.label.label-nav 肿瘤内科
+              a.label.label-nav 内科ICU
+              a.label.label-nav 内分泌科
+              a.label.label-nav 肠外肠内营养科
+              a.label.label-nav 重症医学科(ICU)
+              a.label.label-nav 儿科
+              a.label.label-nav 神经科
+              a.label.label-nav 心理医学科
+              a.label.label-nav 皮肤科
+              a.label.label-nav 变态（过敏）反应科
+              a.label.label-nav 急诊科
+              a.label.label-nav 中医科
+              a.label.label-nav 老年医学科
+            .tag-section
+              h5 手术科室
+              a.label.label-nav(href='#') 外科学系
+              a.label.label-nav(href='#') 基本外科
+              a.label.label-nav(href='#') 骨科
+              a.label.label-nav(href='#') 心外科
+              a.label.label-nav(href='#') 胸外科
+              a.label.label-nav(href='#') 泌尿外科
+              a.label.label-nav(href='#') 神经外科
+              a.label.label-nav(href='#') 血管外科
+              a.label.label-nav(href='#') 整形美容外科
+              a.label.label-nav(href='#') 乳腺外科
+              a.label.label-nav(href='#') 肝脏外科
+              a.label.label-nav(href='#') 妇产科
+              a.label.label-nav(href='#') 眼科
+              a.label.label-nav(href='#') 耳鼻喉科
+              a.label.label-nav(href='#') 口腔科
+              a.label.label-nav(href='#') 麻醉科
+            .tag-section
+              h5 诊断相关科室
+              a.label.label-nav(href='#') 超声医学科
+              a.label.label-nav(href='#') 病理科
+              a.label.label-nav(href='#') 检验科
+              a.label.label-nav(href='#') 放射科
+              a.label.label-nav(href='#') 放射治疗科
+              a.label.label-nav(href='#') 核医学科
+              a.label.label-nav(href='#') 营养科
+              a.label.label-nav(href='#') 输血科
+              a.label.label-nav(href='#') 药剂科
+              a.label.label-nav(href='#') 病案科
+              a.label.label-nav(href='#') 物理医学康复科
+              a.label.label-nav(href='#') 疾病分类中心
+
+block append script
+  script(src="./js/index.js")

@@ -1,0 +1,40 @@
+nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .row
+      .hidden-xs.col-sm-2.col-md-2
+        a.navbar-brand(href='#')
+          img(src='images/logo-title.png', alt='医院网')
+      .visible-xs.col-xs-1
+        a.navbar-brand(href='#')
+          img(src='images/logo.png', alt='医院网')
+      .col-xs-9.col-sm-4.col-md-5
+        form#form-search(role='search')
+          .input-group
+            input#input-search.form-control(type='text', placeholder='查找医院...')
+            a#btn-search.input-group-addon(type='submit')
+              i.glyphicon.glyphicon-search
+      .hidden-xs.col-sm-6.col-md-5
+        ul#navbar-yy.nav.navbar-nav.pull-right
+          li.selected
+            a(href='index.html') 首页
+          li
+            a(href='specialists.html') 平台专家
+          li
+            a(href='hospital.html') 成员医院
+          li
+            a(href='#') 登陆
+      .visible-xs.col-xs-2
+        .nav-btn
+          button.navbar-toggle.dropdown-toggle(type='button', data-toggle='dropdown')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          ul.dropdown-menu.pull-right
+            li.selected
+              a(href='#') 首页
+            li
+              a(href='#') 平台专家
+            li
+              a(href='#') 成员医院
+            li
+              a(href='#') 登陆

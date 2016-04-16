@@ -1,6 +1,6 @@
 less
 jade
-.idea
+.idea/*
 footer.html
 layout.html
 hospital.html

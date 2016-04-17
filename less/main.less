@@ -1,6 +1,42 @@
 @primaryColor: #10bca4;
 @darkColor: #0d9a86;
 @linkColor: #333;
+.transition(@transition) {
+    transition: @transition;
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+}
+
+.transform(@transform) {
+    transform: @transform;
+    -webkit-transform: @transform;
+    -moz-transform: @transform;
+}
+
+.transform-origin(@transform-origin) {
+    transform-origin: @transform-origin;
+    -webkit-transform-origin: @transform-origin;
+    -moz-transform-origin: @transform-origin;
+}
+
+.transform-style(@transform-style) {
+    transform-style: @transform-style;
+    -webkit-transform-style: @transform-style;
+    -moz-transform-style: @transform-style;
+}
+
+.backface-visibility(@backface-visibility) {
+    backface-visibility: @backface-visibility;
+    -webkit-backface-visibility: @backface-visibility;
+    -moz-backface-visibility: @backface-visibility;
+}
+
+.perspective(@perspective) {
+    perspective: @perspective;
+    -webkit-perspective: @perspective;
+    -moz-perspective: @perspective;
+}
+
 body {
     background-color: #efefef;
     padding-top: 65px;
@@ -36,7 +72,7 @@ a {
         height: 80px;
     }
     img {
-        max-width: 90%;
+        width: 90%;
         max-height: 80px;
         vertical-align: middle;
     }
@@ -94,11 +130,11 @@ textarea {
     }
 }
 
-#navbar-yy {
-    a {
+.nav-yy {
+    & > li > a {
         color: #fff;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 10px;
+        margin-right: 10px;
         &:after {
             background-color: #fff;
             display: block;
@@ -108,20 +144,27 @@ textarea {
             height: 2px;
             left: 50%;
             top: 100%;
-            transition: all .3s;
+            .transition(all .3s);
         }
         &:hover,
         &:active {
+            background: none;
+            outline: none;
             &:after {
-                width: 80%;
-                left: 10%;
+                width: 100%;
+                left: 0%;
             }
         }
     }
-    .selected a {
+    .active > a,
+    .active > a:hover,
+    .active > a:focus,
+    .active > a:active {
+        color: #fff;
+        background: none;
         &:after {
-            width: 80%;
-            left: 10%;
+            width: 100%;
+            left: 0%;
         }
     }
 }
@@ -143,9 +186,9 @@ textarea {
         opacity: 0;
         display: block;
         visibility: hidden;
-        transform: scale(.01);
-        transform-origin: 70% 0%;
-        transition: all .3s;
+        .transform(scale(.01));
+        .transform-origin(70% 0%);
+        .transition(all .3s);
         & > li {
             & > a {
                 padding: 10px 20px;
@@ -159,6 +202,9 @@ textarea {
                 &:focus {
                     border-left: 10px solid @darkColor;
                 }
+            }
+            &.active a {
+                background-color: @primaryColor;
             }
         }
     }
@@ -191,7 +237,7 @@ textarea {
 .section-specialist {
     padding-bottom: 10px;
     .specialist-wrapper {
-        perspective: 1000px;
+        .perspective(1000px);
     }
 }
 
@@ -199,11 +245,11 @@ textarea {
     height: 220px;
     margin-bottom: 20px;
     position: relative;
-    transform-style: preserve-3d;
-    transition: all .5s;
+    .transform-style(preserve-3d);
+    .transition(all .5s);
     box-shadow: 0 1px 2px #ddd;
     &:hover {
-        transform: rotateY(180deg);
+        .transform(rotateY(180deg));
     }
     .front,
     .back {
@@ -214,14 +260,11 @@ textarea {
         left: 0;
         top: 0;
         background-color: #f5f5f5;
-        backface-visibility: hidden;
+        .backface-visibility(hidden);
         overflow: hidden;
     }
-    .front {
-        z-index: 1;
-    }
     .back {
-        transform: rotateY(180deg);
+        .transform(rotateY(180deg));
     }
     p {
         margin-bottom: 5px;
@@ -238,6 +281,15 @@ textarea {
         &:hover {
             color: @darkColor;
         }
+    }
+}
+
+
+/******分页导航*******/
+.pager li {
+    a,
+    span {
+        margin-right: 10px;
     }
 }
 

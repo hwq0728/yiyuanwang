@@ -5,36 +5,48 @@
     transition: @transition;
     -webkit-transition: @transition;
     -moz-transition: @transition;
+    -ms-transition: @transition;
+    -o-transition: @transition;
 }
 
 .transform(@transform) {
     transform: @transform;
     -webkit-transform: @transform;
     -moz-transform: @transform;
+    -ms-transform: @transform;
+    -o-transform: @transform;
 }
 
 .transform-origin(@transform-origin) {
     transform-origin: @transform-origin;
     -webkit-transform-origin: @transform-origin;
     -moz-transform-origin: @transform-origin;
+    -ms-transform-origin: @transform-origin;
+    -o-transform-origin: @transform-origin;
 }
 
 .transform-style(@transform-style) {
     transform-style: @transform-style;
     -webkit-transform-style: @transform-style;
     -moz-transform-style: @transform-style;
+    -ms-transform-style: @transform-style;
+    -o-transform-style: @transform-style;
 }
 
 .backface-visibility(@backface-visibility) {
     backface-visibility: @backface-visibility;
     -webkit-backface-visibility: @backface-visibility;
     -moz-backface-visibility: @backface-visibility;
+    -ms-backface-visibility: @backface-visibility;
+    -o-backface-visibility: @backface-visibility;
 }
 
 .perspective(@perspective) {
     perspective: @perspective;
     -webkit-perspective: @perspective;
     -moz-perspective: @perspective;
+    -ms-perspective: @perspective;
+    -o-perspective: @perspective;
 }
 
 body {
@@ -85,13 +97,13 @@ input[type="email"],
 input[type="date"],
 textarea {
     height: 40px;
-    line-height: 40px;
+    line-height: 26px;
     background-color: #f5f5f5;
     border: 1px solid #f5f5f5;
     outline: none;
     box-shadow: none;
     border-radius: 2px;
-    &:hover {
+    &:hover,&:foucs,&:active {
         background-color: #fff;
         box-shadow: inset 0 0 2px rgba(0, 0, 0, .05);
     }
@@ -147,7 +159,8 @@ textarea {
             .transition(all .3s);
         }
         &:hover,
-        &:active {
+        &:active,
+        &:focus {
             background: none;
             outline: none;
             &:after {
@@ -236,20 +249,21 @@ textarea {
 //专家
 .section-specialist {
     padding-bottom: 10px;
-    .specialist-wrapper {
-        .perspective(1000px);
-    }
 }
 
 .specialist {
     height: 220px;
     margin-bottom: 20px;
     position: relative;
+    .perspective(1000px);
     .transform-style(preserve-3d);
-    .transition(all .5s);
-    box-shadow: 0 1px 2px #ddd;
     &:hover {
-        .transform(rotateY(180deg));
+        .front {
+            .transform(rotateY(180deg));
+        }
+        .back {
+            .transform(rotateY(0deg));
+        }
     }
     .front,
     .back {
@@ -262,9 +276,15 @@ textarea {
         background-color: #f5f5f5;
         .backface-visibility(hidden);
         overflow: hidden;
+        .transition(all .5s);
+        box-shadow: 0 1px 2px #ddd;
+    }
+    .front {
+        .transform(rotateY(0deg));
+        z-index: 2;
     }
     .back {
-        .transform(rotateY(180deg));
+        .transform(rotateY(-180deg));
     }
     p {
         margin-bottom: 5px;
@@ -278,14 +298,19 @@ textarea {
             color: #ddd;
             font-size: 100px;
         }
-        &:hover {
-            color: @darkColor;
+        &:hover,
+        &:active,
+        &:visited,
+        &:focus {
+            color: @linkColor;
+            text-decoration: none;
         }
     }
 }
 
 
 /******分页导航*******/
+
 .pager li {
     a,
     span {

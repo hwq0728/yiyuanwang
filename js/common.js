@@ -1,7 +1,7 @@
-$(function () {
+$(function() {
     //导航定位
     if (location.pathname.lastIndexOf('/') !== location.pathname.length - 1) {
-        $('.navbar-nav.nav-yy').find('a').each(function () {
+        $('.navbar-nav.nav-yy').find('a').each(function() {
             var $self = $(this),
                 path = location.pathname;
             $self.parent().removeClass('active');
@@ -10,5 +10,5 @@ $(function () {
                 $self.parent().addClass('active');
             }
         });
-    }
+    }   
 });

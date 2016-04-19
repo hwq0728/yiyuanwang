@@ -24,7 +24,7 @@ block content
             .tab-content
               form#login.tab-pane.active.fade.in(role='tabpanel')
                 #login-info.alert.alert-danger 邮箱格式错误，请重新输入
-                input#login-email.form-control(type='email', title='email', placeholder='邮箱', autofocus='', required='')
+                input#login-email.form-control(type='email', title='email', placeholder='邮箱', required='')
                 input#login-password.form-control(type='password', title='password', placeholder='密码', required='')
                 .checkbox
                   label.font-white(for='login-remember')
@@ -44,7 +44,7 @@ block content
             h4
               | 成员医院
               a.pull-right.text-muted.small(href='#') 更多
-            #carousel-yy.carousel.slide(data-ride='carousel')
+            #carousel-yy.carousel.slide(data-ride='carousel',data-interval='5000')
               // Indicators
               ol.carousel-indicators
                 li(data-target='#carousel-yy', data-slide-to='0',class="active")
